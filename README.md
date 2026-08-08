@@ -200,7 +200,7 @@ GROUP BY
 ORDER BY
 	total_rev DESC
 ```
-![Top products by category](rev_and_rev_pct_by_category.png)
+![Top products by category](images/rev_and_rev_pct_by_category.png)
 
 3. Average Order Value (AOV)
 Compute the average order value for each customer.
@@ -225,7 +225,7 @@ HAVING COUNT(o.order_id) > 5
 ORDER BY 
 	AOV DESC;
 ```
-![AOV per customer](AOV_per_customer.png)
+![AOV per customer](images/AOV_per_customer.png)
 
 4. Monthly Sales Trend
 Query monthly total sales over the past year.
