@@ -257,7 +257,7 @@ FROM monthly_sales
 
 ```
 
-
+![Monthly sales trend](images/MOM_rev_cte.png)
 
 
 6. Best-Selling Categories by State
@@ -294,7 +294,7 @@ FROM topcategories
 WHERE category_rank<=3
 ```
 
-
+![Top_categories by state](images/top_3_cat_by_state.png)
 
 
 
@@ -317,6 +317,7 @@ JOIN inventory AS i
 WHERE i.stock < 10
 
 ```
+![Inventory Alerts](images/products_with_stock_values_below_threshold.png)
 
 9. Shipping Delays
 Identify orders where the shipping date is later than 3 days after the order date.
@@ -330,6 +331,7 @@ JOIN shipping AS s
 	ON o.order_id = s.order_id
 WHERE DATEDIFF(DAY, o.order_date, s.shipping_date)> 3
 ```
+![Delayed orders](images/delayed_orders.png)
 
 10. Payment Success Rate 
 Calculate the percentage of successful payments across all orders.
@@ -345,6 +347,7 @@ JOIN payments AS p
 	ON o.order_id = p.order_id
 GROUP BY p.payment_status
 ```
+![Payment success rate](images/payment_success_rate.png)
 
 11. Top Performing Sellers
 Find the top 5 sellers based on total sales value.
@@ -369,7 +372,7 @@ GROUP BY
 ORDER BY sales DESC
 
 ```
-
+![Sales_by_sellers](images/sales_by_sellers.png)
 
 12. Product Profit Margin
 Calculate the profit margin for each product (difference between price and cost of goods sold).
@@ -385,6 +388,7 @@ SELECT
 	DENSE_RANK() OVER(ORDER BY (price-cogs) DESC) AS profit_margin_position
 FROM products
 ```
+![Product Profit Margin](images/product_profit_margin.png)
 
 13. Most Returned Products
 Query the top 10 products by the number of returns.
@@ -406,6 +410,7 @@ GROUP BY
 	p.product_name
 ORDER BY number_of_times_returned DESC
 ```
+![Most returned products](images/most_returned_projects.png)
 
 14. Inactive Sellers
 Identify sellers who haven’t made any sales in the last 6 months.
@@ -425,7 +430,7 @@ GROUP BY
 HAVING MAX(o.order_date) < DATEADD(MONTH, -6, (SELECT MAX(order_date) FROM orders))
     OR MAX(o.order_date) IS NULL
 ```
-
+![Inactive_sellers](images/sellers_who_havent_sold_in_last_6_months.png)
 
 15. IDENTITY customers into returning or new
 if the customer has done more than 5 return categorize them as returning otherwise new
@@ -457,7 +462,7 @@ SELECT
 FROM returncte;
 
 ```
-
+![Classification of customers](images/classify_customers_into_new_returning.png)
 
 16. Top 5 Customers by Orders in Each State
 Identify the top 5 customers with the highest number of orders for each state.
@@ -490,6 +495,8 @@ FROM customerrankcte
 WHERE category_rank <= 5
 ```
 
+![Top customers by state](images/top_customers_by_state.png)
+
 17. Revenue by Shipping Provider
 Calculate the total revenue handled by each shipping provider.
 Challenge: Include the total number of orders handled and the average delivery time for each provider.
@@ -509,6 +516,7 @@ JOIN order_items AS oi
 GROUP BY 
 	s.shipping_providers
 ```
+![REV by supplier](images/rev_shippingdays_by_supplier.png)
 
 18. Which products are gaining or losing revenue share within their own category, from 2022 to 2023 — regardless of whether the product's raw sales went up or down
 Note: Decrease ratio = cr-ls/ls* 100 (cs = current_year ls=last_year)
@@ -540,7 +548,7 @@ FROM (
 ORDER BY share_change DESC
 ```
 
-
+![Monthly sales trend](images/MOM_rev_cte.png)
 
 ```
 
