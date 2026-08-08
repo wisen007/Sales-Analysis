@@ -260,7 +260,7 @@ FROM monthly_sales
 ![Monthly sales trend](images/MOM_rev_cte.png)
 
 
-6. Best-Selling Categories by State
+5. Best-Selling Categories by State
 Identify the least-selling product category for each state.
 Challenge: Include the total sales for that category within each state.
 
@@ -298,7 +298,7 @@ WHERE category_rank<=3
 
 
 
-8. Inventory Stock Alerts
+6. Inventory Stock Alerts
 Query products with stock levels below a certain threshold (e.g., less than 10 units).
 Challenge: Include last restock date and warehouse information.
 
@@ -319,7 +319,7 @@ WHERE i.stock < 10
 ```
 ![Inventory Alerts](images/products_with_stock_values_below_threshold.png)
 
-9. Shipping Delays
+7. Shipping Delays
 Identify orders where the shipping date is later than 3 days after the order date.
 Challenge: Include customer, order details, and delivery provider.
 
@@ -333,7 +333,7 @@ WHERE DATEDIFF(DAY, o.order_date, s.shipping_date)> 3
 ```
 ![Delayed orders](images/delayed_orders.png)
 
-10. Payment Success Rate 
+8. Payment Success Rate 
 Calculate the percentage of successful payments across all orders.
 Challenge: Include breakdowns by payment status (e.g., failed, pending).
 
@@ -349,7 +349,7 @@ GROUP BY p.payment_status
 ```
 ![Payment success rate](images/payment_success_rate.png)
 
-11. Top Performing Sellers
+9. Top Performing Sellers
 Find the top 5 sellers based on total sales value.
 Challenge: Include both successful and failed orders, and display their percentage of successful orders.
 
@@ -390,7 +390,7 @@ FROM products
 ```
 ![Product Profit Margin](images/product_profit_margin.png)
 
-13. Most Returned Products
+10. Most Returned Products
 Query the top 10 products by the number of returns.
 Challenge: Display the return rate as a percentage of total units sold for each product.
 
@@ -432,7 +432,7 @@ HAVING MAX(o.order_date) < DATEADD(MONTH, -6, (SELECT MAX(order_date) FROM order
 ```
 ![Inactive_sellers](images/sellers_who_havent_sold_in_last_6_months.png)
 
-15. IDENTITY customers into returning or new
+11. IDENTITY customers into returning or new
 if the customer has done more than 5 return categorize them as returning otherwise new
 Challenge: List customers id, name, total orders, total returns
 
@@ -464,7 +464,7 @@ FROM returncte;
 ```
 ![Classification of customers](images/classify_customers_into_new_returning.png)
 
-16. Top 5 Customers by Orders in Each State
+12. Top 5 Customers by Orders in Each State
 Identify the top 5 customers with the highest number of orders for each state.
 Challenge: Include the number of orders and total sales for each customer.
 ```sql
@@ -497,7 +497,7 @@ WHERE category_rank <= 5
 
 ![Top customers by state](images/top_customers_by_state.png)
 
-17. Revenue by Shipping Provider
+13. Revenue by Shipping Provider
 Calculate the total revenue handled by each shipping provider.
 Challenge: Include the total number of orders handled and the average delivery time for each provider.
 
@@ -518,7 +518,7 @@ GROUP BY
 ```
 ![REV by supplier](images/rev_shippingdays_by_supplier.png)
 
-18. Which products are gaining or losing revenue share within their own category, from 2022 to 2023 — regardless of whether the product's raw sales went up or down
+14. Which products are gaining or losing revenue share within their own category, from 2022 to 2023 — regardless of whether the product's raw sales went up or down
 Note: Decrease ratio = cr-ls/ls* 100 (cs = current_year ls=last_year)
 
 ```sql
