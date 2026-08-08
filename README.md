@@ -1,14 +1,16 @@
 
 
-# **Amazon USA Sales Analysis Project**
+# ** Sales Analysis Project**
 
-### **Difficulty Level: Advanced**
+
 
 ---
 
 ## **Project Overview**
 
-I have worked on analyzing a dataset of over 20,000 sales records from an Amazon-like e-commerce platform. This project involves extensive querying of customer behavior, product performance, and sales trends using PostgreSQL. Through this project, I have tackled various SQL problems, including revenue analysis, customer segmentation, and inventory management.
+E-commerce platforms generate enormous volumes of transactional data — but data alone doesn't answer the questions that actually keep a business running: Which products are quietly losing ground to their category? Which sellers convert reliably versus those with high cancellation rates? Which shipping providers are dragging down delivery performance? I built this project to answer exactly those kinds of questions, using a 20,000+ record sales dataset modeled after an Amazon-style e-commerce platform, spanning customers, sellers, products, orders, order items, shipping, and payments.
+
+As a business analyst, I focused on starting from a stakeholder question, tracing it through an 8-table relational schema (mapped out in the accompanying ERD), and writing SQL designed to hold up under scrutiny — not just return a number, but the right number. A recurring focus throughout the project was join-grain integrity: several tables in this schema carry one-to-many relationships (an order can have multiple shipments or payment attempts, for instance), and joining across them without care can silently inflate revenue and return metrics through row duplication. Verifying join cardinality before trusting an aggregate became a core discipline I applied across every query in this project, rather than an afterthought.
 
 The project also focuses on data cleaning, handling null values, and solving real-world business problems using structured queries.
 
