@@ -200,6 +200,7 @@ GROUP BY
 ORDER BY
 	total_rev DESC
 ```
+![Top products by category](rev and rev_pct by category)
 
 3. Average Order Value (AOV)
 Compute the average order value for each customer.
