@@ -225,6 +225,7 @@ HAVING COUNT(o.order_id) > 5
 ORDER BY 
 	AOV DESC;
 ```
+![AOV per customer](AOV_per_customer.png)
 
 4. Monthly Sales Trend
 Query monthly total sales over the past year.
