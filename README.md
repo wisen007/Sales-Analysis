@@ -374,7 +374,7 @@ ORDER BY sales DESC
 ```
 ![Sales_by_sellers](images/sales_by_sellers.png)
 
-12. Product Profit Margin
+10. Product Profit Margin
 Calculate the profit margin for each product (difference between price and cost of goods sold).
 Challenge: Rank products by their profit margin, showing highest to lowest.
 */
@@ -390,7 +390,7 @@ FROM products
 ```
 ![Product Profit Margin](images/product_profit_margin.png)
 
-10. Most Returned Products
+11. Most Returned Products
 Query the top 10 products by the number of returns.
 Challenge: Display the return rate as a percentage of total units sold for each product.
 
@@ -412,7 +412,7 @@ ORDER BY number_of_times_returned DESC
 ```
 ![Most returned products](images/most_returned_projects.png)
 
-14. Inactive Sellers
+12. Inactive Sellers
 Identify sellers who haven’t made any sales in the last 6 months.
 Challenge: Show the last sale date and total sales from those sellers.
 
@@ -432,7 +432,7 @@ HAVING MAX(o.order_date) < DATEADD(MONTH, -6, (SELECT MAX(order_date) FROM order
 ```
 ![Inactive_sellers](images/sellers_who_havent_sold_in_last_6_months.png)
 
-11. IDENTITY customers into returning or new
+13. IDENTITY customers into returning or new
 if the customer has done more than 5 return categorize them as returning otherwise new
 Challenge: List customers id, name, total orders, total returns
 
@@ -464,7 +464,7 @@ FROM returncte;
 ```
 ![Classification of customers](images/classify_customers_into_new_returning.png)
 
-12. Top 5 Customers by Orders in Each State
+14. Top 5 Customers by Orders in Each State
 Identify the top 5 customers with the highest number of orders for each state.
 Challenge: Include the number of orders and total sales for each customer.
 ```sql
@@ -497,7 +497,7 @@ WHERE category_rank <= 5
 
 ![Top customers by state](images/top_customers_by_state.png)
 
-13. Revenue by Shipping Provider
+15. Revenue by Shipping Provider
 Calculate the total revenue handled by each shipping provider.
 Challenge: Include the total number of orders handled and the average delivery time for each provider.
 
@@ -518,7 +518,7 @@ GROUP BY
 ```
 ![REV by supplier](images/rev_shippingdays_by_supplier.png)
 
-14. Which products are gaining or losing revenue share within their own category, from 2022 to 2023 — regardless of whether the product's raw sales went up or down
+16. Which products are gaining or losing revenue share within their own category, from 2022 to 2023 — regardless of whether the product's raw sales went up or down
 Note: Decrease ratio = cr-ls/ls* 100 (cs = current_year ls=last_year)
 
 ```sql
@@ -548,7 +548,7 @@ FROM (
 ORDER BY share_change DESC
 ```
 
-![Monthly sales trend](images/MOM_rev_cte.png)
+![Monthly sales trend](images/decreasing.png)
 
 ```
 
