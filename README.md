@@ -560,16 +560,46 @@ ORDER BY share_change DESC
 
 ---
 
-## **Learning Outcomes**
+## Key Insights
 
-This project enabled me to:
-- Design and implement a normalized database schema.
-- Clean and preprocess real-world datasets for analysis.
-- Use advanced SQL techniques, including window functions, subqueries, and joins.
-- Conduct in-depth business analysis using SQL.
-- Optimize query performance and handle large datasets efficiently.
+1. **Revenue is heavily concentrated in Electronics.** The category accounts for 89.7% of total platform revenue ($11.3M of ~$12.6M), with every other category combined contributing under 11%.
+
+2. **A small group of sellers drives the majority of revenue.** The top 5 sellers generate roughly $7.0M — over 55% of total platform revenue — while two sellers show no recorded sales at all.
+
+3. **A significant share of orders never convert to retained revenue.** 84.6% of orders have successful payments, but 13.1% are refunded and 2.3% fail — meaning close to 1 in 6 orders doesn't result in kept revenue.
+
+4. **A large volume of orders ship later than expected.** 8,452 orders shipped more than 3 days after the order date.
+
+5. **Some of the highest-order-count customers are also the highest-return customers.** Customers like Abigail Reed (108 orders, 106 returns) and Abigail Johnson (88 orders, 88 returns) show return rates near 100%, despite ranking among the platform's most "active" accounts by order volume.
+
+6. **Delivery speed does not correlate with order volume across shipping providers.** DHL delivers fastest on average (2 days) but handles the least revenue ($2.6M), while FedEx and BlueDart both average 3 days yet FedEx handles over 3x BlueDart's volume.
+
+7. **Several products are gaining meaningful category share from a standing start.** Products including Men's Winter Coat, Men's Dress Vest, and Food Processor moved from no prior-year sales to notable category revenue share.
+
+8. **Monthly revenue is volatile with no consistent trend.** Month-over-month revenue has swung between roughly +32% and -19% across the observed period.
 
 ---
+
+## Recommendations
+
+1. **Diversify category revenue.** With 89.7% of revenue tied to Electronics, the business is exposed to concentrated risk from any pricing, supply, or demand disruption in that single category. Invest in promotion, bundling, or merchandising to grow secondary categories such as Sports & Outdoors and Toys & Games, which already show early traction in specific states.
+
+2. **Treat top-5 sellers as strategic accounts.** Given they represent over half of total revenue, prioritize dedicated account management, favorable terms, and proactive support to protect this concentrated revenue base — losing even one could have an outsized impact.
+
+3. **Investigate the refund rate as a cost-reduction opportunity.** A 13%+ refund rate represents a meaningful revenue leak. Break this down by category and seller to identify whether refunds are concentrated in specific product lines (which may point to quality or listing-accuracy issues) or specific sellers (which may point to fulfillment issues).
+
+4. **Address shipping delays as a customer experience priority.** With 8,452 delayed orders, cross-referencing delays against specific sellers or shipping providers can pinpoint whether this is a systemic fulfillment issue or isolated to specific partners — and prioritize renegotiation or process fixes accordingly.
+
+5. **Re-evaluate how "high-value customer" is defined.** Order volume alone is a misleading loyalty signal; several top-order customers are returning nearly everything they buy. Recommend building a "net retained orders" view (orders minus returns) for loyalty and marketing segmentation, rather than relying on raw order count.
+
+6. **Reassess shipping provider allocation.** Since delivery speed doesn't currently track with order volume, there may be an opportunity to shift more shipments toward faster providers like DHL — particularly for time-sensitive or high-value orders — without sacrificing cost efficiency.
+
+7. **Increase inventory and marketing support behind emerging products.** Products gaining rapid category share from a zero base are early signals of demand — prioritizing stock and promotional support for these while momentum is building could compound their growth.
+
+8. **Build a longer-term revenue forecasting model before committing to seasonal planning.** The scale of month-over-month swings suggests the business shouldn't rely on short-window trends alone for inventory or staffing decisions — a multi-year seasonality view would give more reliable planning signals.
+
+
+
 
 ## **Conclusion**
 
@@ -579,7 +609,6 @@ By completing this project, I have gained a deeper understanding of how SQL can 
 
 ---
 
-### **Entity Relationship Diagram (ERD)**
-![ERD](https://github.com/najirh/amazon_usa_project5/blob/main/erd.png)
+
 
 ---
