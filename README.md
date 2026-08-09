@@ -376,7 +376,7 @@ ORDER BY sales DESC
 10. Product Profit Margin
 Calculate the profit margin for each product (difference between price and cost of goods sold).
 
-*/
+
 
 
 ```sql
@@ -549,7 +549,7 @@ ORDER BY share_change DESC
 
 ![Monthly sales trend](images/decreasing.png)
 
-```
+
 
 
 
@@ -598,11 +598,12 @@ ORDER BY share_change DESC
 
 
 
+
 ## **Conclusion**
 
-This advanced SQL project successfully demonstrates my ability to solve real-world e-commerce problems using structured queries. From improving customer retention to optimizing inventory and logistics, the project provides valuable insights into operational challenges and solutions.
+This project moved beyond writing queries that "return a number" to writing queries that hold up under scrutiny and surface findings a business could act on. A few results stood out: revenue is concentrated heavily in electronics (89.7%) and among a small handful of top sellers (55%+ of revenue from just 5 sellers), roughly 1 in 6 orders fails to convert to retained revenue, and customer segmentation revealed that high order volume doesn't reliably signal loyalty — several "returning" customers showed return rates near 100%, a pattern worth flagging rather than treating as a positive retention signal.
 
-By completing this project, I have gained a deeper understanding of how SQL can be used to tackle complex data problems and drive business decision-making.
+Technically, the project reinforced a habit I now treat as non-negotiable: verifying join cardinality before trusting an aggregate. Several early queries in this project risked inflating revenue or return counts due to one-to-many joins across `shipping`, `payments`, and `order_items` — catching and correcting those taught me more about SQL rigor than writing the "correct" query on the first attempt ever could have.
 
 ---
 
